@@ -2041,6 +2041,19 @@ export function DataCenterContent() {
 {"\n"}
 </article>
 {"\n"}
+<section className="note-download entry-content" id="research-skill" aria-labelledby="research-skill-title">
+<p className="eyebrow">TAKE THE METHOD TO YOUR REGION</p>
+<h2 id="research-skill-title">Download the research skill.</h2>
+<p>Give a browsing-enabled AI assistant a region to investigate. This skill guides it through land records, planning filings, utility documents and incentives, then asks it to cross-check each lead and report the evidence with source links.</p>
+<p>It is one plain-text Markdown file. No code to run, dependencies to install or credentials included. The ZIP contains only <code>data-center-scout/SKILL.md</code>, with the folder ready to install.</p>
+<p><a className="button-dark" href="/downloads/data-center-scout/SKILL.md" download="SKILL.md">Download SKILL.md ↓</a> <a className="text-link" href="/downloads/data-center-scout.zip" download>Download the ZIP ↓</a></p>
+<details className="note-assumptions"><summary>Install it or use it as a prompt</summary>
+<p>For Codex, unzip the folder into <code>~/.codex/skills/</code>, or save the Markdown file as <code>~/.codex/skills/data-center-scout/SKILL.md</code>. Start a new session so the skill is discovered.</p>
+<p>Then ask: <q>Use $data-center-scout to investigate proposed data centers in Franklin County, Ohio. Focus on public records from the past 12 months.</q></p>
+<p>For another assistant, attach the Markdown file or paste its contents into a new chat and name your region. The assistant needs web browsing to research current records. Skill installation support varies by product.</p>
+</details>
+<p><small>The download includes research instructions, not the article’s underlying datasets. It separates confirmed projects from leads, checks competing explanations, and treats inaccessible records as gaps. It does not turn the article’s backtest results into probabilities for a new region.</small></p>
+</section>
 <nav className={"post-nav"} aria-label={"Article navigation"}>
 <a href={"/whats-a-pinn/"} rel={"prev"}>
 {"← What’s a PINN?"}
