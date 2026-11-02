@@ -1,0 +1,58 @@
+# Dependencies and generated Next.js output
+node_modules/
+.next/
+dist/
+/out/
+/build/
+*.tsbuildinfo
+
+# Local Vercel project settings
+.vercel/
+
+# Environment variables and private keys
+.env*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+
+# Local enquiries, previews and agent scratch data
+.local/
+.superpowers/
+
+# Tool caches, logs and test output
+.cache/
+.turbo/
+.swc/
+*.log
+coverage/
+playwright-report/
+test-results/
+
+# Python environments and generated example outputs
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+examples/**/output/
+
+# Operating system metadata
+.DS_Store
+._*
+Thumbs.db
+
+# Original and superseded portrait assets
+site/assets/ted-headshot-v5.jpg
+site/assets/ted-headshot-v6.jpg
+site/assets/ted-original.jpg
+site/assets/ted-headshot.jpg
+site/assets/ted.webp
+site/assets/ted-headshot-3d-v6.png
+site/assets/ted-headshot-square.jpg
+site/assets/ted-headshot-3d-v4.png
+site/assets/ted-headshot-3d-v5.png
+site/assets/ted.png
+site/assets/ted-headshot-3d-v2.png
+site/assets/ted-headshot-3d-v3.png
+site/assets/ted-headshot-generated.png

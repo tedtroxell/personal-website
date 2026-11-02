@@ -1,0 +1,191 @@
+<!-- wp:paragraph {"className":"tt-article-deck"} -->
+<p class="tt-article-deck">A first model does not need to reproduce every detail. It needs to answer a defined question inside a tolerance the decision can accept.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"tt-mold-stage tt-mold-stage-1","layout":{"type":"constrained"}} -->
+<div class="wp-block-group tt-mold-stage tt-mold-stage-1"><!-- wp:heading -->
+<h2 class="wp-block-heading">The hard question arrives before the perfect model.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>A team is looking at a part and asking a practical question: will this gate layout give the melt a plausible path through the cavity, or should we try another location?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>A full mold-fill simulation can answer much more. It can also take real effort to prepare. Geometry needs repair and meshing. Material behavior and process settings need to be described. The solver must handle a moving front, changing viscosity, heat transfer and boundary conditions. Those details can make a model computationally expensive. Nonlinear solves can also fail to converge, especially when the setup is poor or the requested physics are difficult to resolve.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>That does not mean good solvers routinely fail. It means the first question may not need the most demanding model. If we are still deciding which layout to investigate, a smaller model can help us learn sooner and avoid spending time tuning a simulation whose result would not change the next step.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"tt-mold-stage tt-mold-stage-2","layout":{"type":"constrained"}} -->
+<div class="wp-block-group tt-mold-stage tt-mold-stage-2"><!-- wp:heading -->
+<h2 class="wp-block-heading">Start with the decision, then set the tolerance.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Before choosing equations, write down the decision. Here, it might be: does this candidate gate connect to the far regions of the cavity without an obvious isolated pocket?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Then ask how wrong the answer can be and still help. If the goal is to screen out disconnected layouts, a coarse geometric ranking may be enough to choose what to study next. If the goal is to predict fill time or machine pressure, that same ranking is not enough. The tolerance belongs to the decision, not to the animation.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>That is the Pareto idea I use in solution engineering: spend effort on the factors that can change this decision. “80/20” is a reminder to focus, not a claim that twenty percent of the work delivers eighty percent accuracy. We have to measure whether the shortcut is good enough for the actual call.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"tt-mold-stage tt-mold-stage-3","layout":{"type":"constrained"}} -->
+<div class="wp-block-group tt-mold-stage tt-mold-stage-3"><!-- wp:heading -->
+<h2 class="wp-block-heading">A proxy can give us a map, not the fluid.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>For this example, represent the case as a two-dimensional mask and mark the charging-port gate. The camera opening is excluded from the mask, so it has no cavity volume and every path must go around it. The strip between the case wall and the opening is only one grid cell wide, while the route to its right is much wider. We assign that narrow left bypass extra travel cost, so the wider right route advances ahead in the illustration. This represents a possible flow split around a bottleneck. It does not calculate pressure or prove which side would lead in a real mold. A tapered penalty along the case walls and two darker-green regions add other mild resistance proxies. The wall penalty stands in for slower flow near a no-slip boundary. None of these costs are measured material properties or a resolved shear-stress field.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The slider sets an equal-cell volume budget. At each step, the model fills the earliest travel-cost layer, sharing any remaining budget across that partial layer. With equal grid cells and assumed uniform thickness, the displayed percentage is an area-equivalent cavity-volume fraction. The same 20 by 40 grid stays in place over a softly blended front. The wall, narrow-bypass and local penalties slow and bend that front, but the smoothing is visual interpolation, not finer simulation data. Dashed marks suggest where paths around the camera opening and drag zones may reunite. These are possible weld lines in a geometry-only sketch, not predictions from a flow solver.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><p>This weighted geometry proxy keeps an equal-cell volume budget, but it does not solve mass transport or calculate polymer velocity, pressure, temperature, wall shear stress, fill time, weld strength or the real shape of the melt front. Its resistance penalties, smoothed boundary and possible weld lines are illustrative only.</p></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>That boundary is useful. The proxy can make a layout discussion concrete without pretending to replace process simulation. If it helps us choose a more informative next experiment, it delivers value early and has done its job.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"tt-mold-stage tt-mold-stage-4","layout":{"type":"constrained"}} -->
+<div class="wp-block-group tt-mold-stage tt-mold-stage-4"><!-- wp:heading -->
+<h2 class="wp-block-heading">What the full model has to carry</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>A more physical filling analysis begins with conservation. The equations say that mass and momentum balance, while a material model describes how the melt responds to deformation. If temperature-dependent viscosity changes that response, the model also needs an energy balance. It must track where the melt ends and air begins, and it needs geometry, material data, process conditions and boundary conditions.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"tt-equation","layout":{"type":"constrained"}} -->
+<div class="wp-block-group tt-equation"><!-- wp:paragraph -->
+<p><strong>Mass, for an incompressible melt:</strong> <code>∇ · u = 0</code></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Momentum:</strong> <code>ρ(∂u/∂t + u · ∇u) = −∇p + ∇ · τ + ρg</code></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>One useful stress model:</strong> <code>τ = 2η(T, γ̇)D</code></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Energy, when temperature evolution matters:</strong> <code>ρcp(∂T/∂t + u · ∇T) = ∇ · (k∇T) + τ:D</code></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p>Here, <em>u</em> is velocity, <em>ρ</em> density, <em>p</em> pressure, <em>τ</em> stress, <em>η</em> viscosity, <em>T</em> temperature, <em>γ̇</em> shear rate, and <em>D</em> the rate of deformation. In plain terms, the equations connect how fast the melt moves, how hard it is to push, how it resists being sheared, and how it heats or cools.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>A moving-front method tracks the melt-air boundary. Front tracking, volume-fraction methods and level sets are numerical choices for doing that. They are not extra conservation laws. The particular constitutive model and solver details depend on the material, geometry and output we need. Autodesk describes its 3D Fill+Pack analysis as a Navier–Stokes model with non-Newtonian viscosity, with solver options that trade speed against completeness. The governing equations also vary with the assumptions and material model used.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Further reading:</strong> <a href="https://help.autodesk.com/cloudhelp/2024/ENU/MoldflowInsight-CLC-Analyses/files/analysis-sequences/Fill-analysis/MoldflowInsight_CLC_Analyses_analysis_sequences_Fill_analysis_3D_Fill_Pack_analysis_options_html.html">Autodesk Moldflow, 3D Fill+Pack analysis options</a>; <a href="https://dergipark.org.tr/en/pub/gujs/article/97092">Güldaş, Uluer and Özdemir, derivation of governing equations for polymer melt flow</a>.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"tt-mold-stage tt-mold-stage-5","layout":{"type":"constrained"}} -->
+<div class="wp-block-group tt-mold-stage tt-mold-stage-5"><!-- wp:heading -->
+<h2 class="wp-block-heading">Add terms when their answers could change the call</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Every added term can make the model more useful for some questions. It also brings assumptions, inputs and compute cost. There is no general percentage of accuracy gained by turning on the next piece of physics. The gain depends on the part, resin, process window and quantity we are trying to predict.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<div class="tt-table-scroll" role="region" aria-label="Model fidelity trade-offs. Scroll within this table on narrow screens." tabindex="0">
+<table class="tt-fidelity-table">
+<caption>What each modeling step can answer, and what it asks of us</caption>
+<thead><tr><th scope="col">Model rung</th><th scope="col">New output</th><th scope="col">Added input or calibration</th><th scope="col">Cost and likely failure</th><th scope="col">Evidence to justify it</th></tr></thead>
+<tbody>
+<tr><th scope="row">Geometry proxy</th><td>Connectivity and relative reach</td><td>Cavity outline and gate location</td><td>Low setup. Can mislead when thickness or flow resistance drives the result.</td><td>Agreement with known geometry constraints or a simple trial fill.</td></tr>
+<tr><th scope="row">Pressure and viscous flow</th><td>Pressure distribution and a more physical front order</td><td>Mesh, process boundary conditions and characterized shear-dependent viscosity</td><td>More setup and nonlinear solves. Sensitive to mesh, boundaries and material fit.</td><td>Measured pressure or front progression across representative cases.</td></tr>
+<tr><th scope="row">Thermal coupling</th><td>Temperature history and effects of temperature on viscosity</td><td>Thermal properties, melt and mold temperatures, heat-transfer assumptions</td><td>More coupled computation. Sensitive to uncertain thermal inputs.</td><td>Temperature evidence and improved prediction of the decision output.</td></tr>
+<tr><th scope="row">Packing, compressibility or detailed 3D effects</th><td>Packing behavior, shrinkage-related outputs or local three-dimensional effects</td><td>PVT/material data, cooling and packing conditions, refined geometry</td><td>Can carry the highest data and runtime burden for this question. Added detail can still be poorly identified or unstable.</td><td>Part dimensions, cavity pressure, cooling data or another measurement tied to the decision.</td></tr>
+</tbody></table></div>
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p>Some terms can be simplified when a scale check shows they are small for the case at hand. In many viscous polymer-fill regimes, inertia is small relative to viscous stress. That is a reason to check the regime, not a rule for every gate and cavity. Gravity may be negligible compared with injection forces, but orientation and geometry can change that. If the decision is about packing, shrinkage or dimensions, a fill-only proxy has left out the subject of the question.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The practical question is not “How much physics can we add?” It is “Which missing effect could move the decision outside tolerance?” Add that effect, then check whether the added complexity earns its keep.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"tt-mold-stage tt-mold-stage-6","layout":{"type":"constrained"}} -->
+<div class="wp-block-group tt-mold-stage tt-mold-stage-6"><!-- wp:heading -->
+<h2 class="wp-block-heading">Measure the improvement before paying for it</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Pick the output and tolerance before comparing models. Use independent measurements where possible. If the reference is another simulation, first establish how well that simulation agrees with measurements for a similar regime. A more detailed answer is not automatically the truth.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For each rung, compare the same cases and report a few things that matter to the decision: average bias, mean absolute or root-mean-square error, whether the model makes the same choice as the reference, runtime, and how often it fails to converge. Hold back some geometries or process settings for a final check instead of tuning against every case.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Then compare the improvement with the added effort. If thermal coupling changes a temperature-sensitive decision and matches independent data, it may be worth the cost. If it changes a number but never changes the decision, it may not be. The right stopping point is where the next model step no longer changes what we will do, within the tolerance we agreed to.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<div class="tt-fidelity-guide" data-fidelity-guide>
+<label for="tt-fidelity-target"><strong>Choose the quantity you need to decide.</strong></label>
+<select id="tt-fidelity-target" data-fidelity-select>
+<option value="reach">Geometric reach</option>
+<option value="fill-order">Relative fill order</option>
+<option value="fill-time">Fill time</option>
+<option value="pressure">Pressure</option>
+<option value="temperature">Temperature history</option>
+<option value="weld">Weld quality</option>
+<option value="packing">Packing or shrinkage</option>
+</select>
+<div class="tt-fidelity-guidance" data-fidelity-panels>
+<section data-fidelity-panel="reach"><h3>Start with geometry, then check a known constraint.</h3><p>The proxy can help screen connectivity. To trust it for this part, compare its ranking with a simple trial or a verified layout constraint. If local thickness or flow resistance changes the ranking, move to a flow model.</p></section>
+<section data-fidelity-panel="fill-order"><h3>Compare order with observed front progression.</h3><p>Use short shots or another independent view of front progression across more than one representative layout. If the order changes with process settings, a pressure-flow model may be needed.</p></section>
+<section data-fidelity-panel="fill-time"><h3>Use a flow model and measured process timing.</h3><p>Check predicted fill time against machine records or measured front arrival at known locations. Include the material and process conditions that set the fill profile.</p></section>
+<section data-fidelity-panel="pressure"><h3>Measure pressure in the cavity or at a validated boundary.</h3><p>Use a model that solves pressure and viscous flow with characterized rheology. Compare pressure histories at the same locations and process settings.</p></section>
+<section data-fidelity-panel="temperature"><h3>Add thermal behavior and independent temperature evidence.</h3><p>Use thermal properties and boundary conditions that match the mold and melt. Compare against suitable temperature measurements while accounting for sensor placement and response.</p></section>
+<section data-fidelity-panel="weld"><h3>Track fronts and test the resulting part.</h3><p>A geometric line where paths meet does not predict weld strength. Compare front meeting, local temperature and pressure with part-level testing tied to the actual failure mode.</p></section>
+<section data-fidelity-panel="packing"><h3>Model packing and cooling, then measure the part.</h3><p>Include compressibility or PVT behavior when relevant, the pack profile and cooling conditions. Compare cavity pressure and dimensional measurements across representative parts.</p></section>
+</div></div>
+<!-- /wp:html --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"tt-mold-stage tt-mold-stage-7","layout":{"type":"constrained"}} -->
+<div class="wp-block-group tt-mold-stage tt-mold-stage-7"><!-- wp:heading -->
+<h2 class="wp-block-heading">Try the proxy. Then decide what to learn next.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Use the arrow keys or the controls below to move the equal-cell volume budget forward and back. Watch how the opening and added travel costs shape the front while the grid stays fixed. This is an area-equivalent 2D proxy, not a mass-conserving flow simulation.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:shortcode -->
+[tt_pareto_fill_control]
+<!-- /wp:shortcode -->
+
+<!-- wp:paragraph -->
+<p>Start with the least complicated model that can support the decision. Measure where it misses. Add detail when that miss matters.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->

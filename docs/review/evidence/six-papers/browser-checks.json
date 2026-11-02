@@ -1,0 +1,224 @@
+{
+  "desktop": [
+    {
+      "slug": "attention-residuals",
+      "initial": {
+        "chapters": 5,
+        "page": 1422,
+        "progress": "width:0%",
+        "title": "Which layers should get a say?",
+        "width": 1422
+      },
+      "after": {
+        "progress": "width: 40%;",
+        "svg": "ATTENTION / MIXING ACROSS DEPTH"
+      }
+    },
+    {
+      "slug": "engram-conditional-memory",
+      "initial": {
+        "chapters": 5,
+        "page": 1422,
+        "progress": "width:0%",
+        "title": "Stop recomputing what you can look up.",
+        "width": 1422
+      },
+      "after": {
+        "progress": "width: 40%;",
+        "svg": "MEMORY / RETRIEVE THEN GATE"
+      }
+    },
+    {
+      "slug": "language-models-over-bytes",
+      "initial": {
+        "chapters": 5,
+        "page": 1422,
+        "progress": "width:0%",
+        "title": "What the tokenizer hides.",
+        "width": 1422
+      },
+      "after": {
+        "progress": "width: 44%;",
+        "svg": "TEXT / BYTE TO PATCH TO MODEL"
+      }
+    },
+    {
+      "slug": "paper2agent-executable-research",
+      "initial": {
+        "chapters": 5,
+        "page": 1422,
+        "progress": "width:0%",
+        "title": "A paper you can put to work.",
+        "width": 1422
+      },
+      "after": {
+        "progress": "width: 47%;",
+        "svg": "RESEARCH / A TESTED TOOL SURFACE"
+      }
+    },
+    {
+      "slug": "alphagenome-context-and-resolution",
+      "initial": {
+        "chapters": 5,
+        "page": 1422,
+        "progress": "width:0%",
+        "title": "The detail needs its context.",
+        "width": 1422
+      },
+      "after": {
+        "progress": "width: 46%;",
+        "svg": "CONTEXT / REFERENCE AND ALTERNATE"
+      }
+    },
+    {
+      "slug": "dinov3-patch-features",
+      "initial": {
+        "chapters": 5,
+        "page": 1422,
+        "progress": "width:0%",
+        "title": "A good image label is not enough.",
+        "width": 1422
+      },
+      "after": {
+        "progress": "width: 42%;",
+        "svg": "VISION / PATCH RELATIONSHIPS"
+      }
+    }
+  ],
+  "mobile": [
+    {
+      "slug": "attention-residuals",
+      "top": {
+        "page": 355,
+        "progress": "width:0%",
+        "width": 355
+      },
+      "scrolled": {
+        "figureHeight": 221.65798950195312,
+        "progress": "width: 28%;"
+      },
+      "experiment": {
+        "page": 355,
+        "selects": 0,
+        "sliders": 2,
+        "width": 355
+      }
+    },
+    {
+      "slug": "engram-conditional-memory",
+      "top": {
+        "page": 355,
+        "progress": "width:0%",
+        "width": 355
+      },
+      "scrolled": {
+        "figureHeight": 221.65798950195312,
+        "progress": "width: 28%;"
+      },
+      "experiment": {
+        "page": 355,
+        "selects": 1,
+        "sliders": 2,
+        "width": 355
+      }
+    },
+    {
+      "slug": "language-models-over-bytes",
+      "top": {
+        "page": 355,
+        "progress": "width:0%",
+        "width": 355
+      },
+      "scrolled": {
+        "figureHeight": 221.65798950195312,
+        "progress": "width: 30%;"
+      },
+      "experiment": {
+        "page": 355,
+        "selects": 0,
+        "sliders": 1,
+        "width": 355
+      }
+    },
+    {
+      "slug": "paper2agent-executable-research",
+      "top": {
+        "page": 355,
+        "progress": "width:0%",
+        "width": 355
+      },
+      "scrolled": {
+        "figureHeight": 221.65798950195312,
+        "progress": "width: 35%;"
+      },
+      "experiment": {
+        "page": 355,
+        "selects": 1,
+        "sliders": 0,
+        "width": 355
+      }
+    },
+    {
+      "slug": "alphagenome-context-and-resolution",
+      "top": {
+        "page": 355,
+        "progress": "width:0%",
+        "width": 355
+      },
+      "scrolled": {
+        "figureHeight": 221.65798950195312,
+        "progress": "width: 32%;"
+      },
+      "experiment": {
+        "page": 355,
+        "selects": 1,
+        "sliders": 3,
+        "width": 355
+      }
+    },
+    {
+      "slug": "dinov3-patch-features",
+      "top": {
+        "page": 355,
+        "progress": "width:0%",
+        "width": 355
+      },
+      "scrolled": {
+        "figureHeight": 221.65798950195312,
+        "progress": "width: 32%;"
+      },
+      "experiment": {
+        "page": 355,
+        "selects": 0,
+        "sliders": 3,
+        "width": 355
+      }
+    }
+  ],
+  "interactions": [
+    {
+      "kind": "dino",
+      "rotated": "Mean squared Gram mismatch\n0.3980\nSelected patch\n6\nSelf-similarity\n1.000\nCommon rotation\n180°",
+      "anchored": "Mean squared Gram mismatch\n0.0000\nSelected patch\n16\nSelf-similarity\n1.000\nCommon rotation\n180°"
+    },
+    {
+      "kind": "engram",
+      "result": "Selected slot\n1\nPhrases sharing that slot\n5\nTotal excess occupants\n6\nIllustrative contribution\n0.00 units"
+    },
+    {
+      "kind": "bytes",
+      "result": "Unicode code points\n1\nUTF-8 bytes\n4\nFixed-width groups\n1\nActual bytes per group\n4.00",
+      "hex": "f0 9f a7 aa"
+    },
+    {
+      "kind": "agent",
+      "blocked": "Tool handoff\nBlocked\nExpected fixture\n10\nObserved fixture\nNot run\nPassing stages\n2 / 5",
+      "repaired": "Tool handoff\nVerified fixture\nExpected fixture\n10\nObserved fixture\n10\nPassing stages\n5 / 5"
+    },
+    {
+      "kind": "genome",
+      "cropped": "Changed-site coverage\nOutside window\nVisible interval\n60 to 90\nFull synthetic difference at 105\n-3.80 units\nResponse setting\nA / fictional",
+      "settingB": "Changed-site coverage\nOutside window\nVisible interval\n60 to 90\nFull synthetic difference at 105\n-1.14 units\nResponse setting\nB / fictional"
+    }
+  ]
+}

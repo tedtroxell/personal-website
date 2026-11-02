@@ -1,0 +1,93 @@
+{
+  "mobile": [
+    {
+      "images": true,
+      "overflow": false,
+      "path": "/where-the-work-waits",
+      "sections": 5,
+      "sliders": 4,
+      "width": 433
+    },
+    {
+      "images": true,
+      "overflow": false,
+      "path": "/how-good-is-the-measurement",
+      "sections": 5,
+      "sliders": 4,
+      "width": 433
+    },
+    {
+      "images": true,
+      "overflow": false,
+      "path": "/when-the-model-should-ask-for-help",
+      "sections": 6,
+      "sliders": 5,
+      "width": 433
+    }
+  ],
+  "narrow": [
+    {
+      "path": "/where-the-work-waits",
+      "scrollWidth": 355,
+      "w": 355
+    },
+    {
+      "path": "/how-good-is-the-measurement",
+      "scrollWidth": 355,
+      "w": 355
+    },
+    {
+      "path": "/when-the-model-should-ask-for-help",
+      "scrollWidth": 355,
+      "w": 355
+    }
+  ],
+  "scroll": [
+    {
+      "slug": "where-the-work-waits",
+      "before": {
+        "dash": "calc(1px)",
+        "progress": "0%"
+      },
+      "forward": {
+        "dash": "0%",
+        "progress": "35%"
+      },
+      "back": {
+        "dash": "calc(1px)",
+        "progress": "0%"
+      }
+    },
+    {
+      "slug": "how-good-is-the-measurement",
+      "before": {
+        "dash": "calc(1px)",
+        "progress": "0%"
+      },
+      "forward": {
+        "dash": "0%",
+        "progress": "32%"
+      },
+      "back": {
+        "dash": "calc(1px)",
+        "progress": "0%"
+      }
+    },
+    {
+      "slug": "when-the-model-should-ask-for-help",
+      "before": {
+        "dash": "calc(1px)",
+        "progress": "0%"
+      },
+      "forward": {
+        "dash": "0%",
+        "progress": "27%"
+      },
+      "back": {
+        "dash": "calc(1px)",
+        "progress": "0%"
+      }
+    }
+  ],
+  "homepageDrawingGeometryUnchanged": true
+}

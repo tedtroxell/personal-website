@@ -1,0 +1,326 @@
+{
+  "desktop": {
+    "reference": {
+      "charts": [
+        {
+          "height": 376.779541015625,
+          "id": "",
+          "viewBox": "0 0 880 364",
+          "width": 910.90283203125
+        },
+        {
+          "height": 440.9548950195313,
+          "id": "",
+          "viewBox": "0 0 880 426",
+          "width": 910.90283203125
+        },
+        {
+          "height": 467.8645935058594,
+          "id": "",
+          "viewBox": "0 0 880 452",
+          "width": 910.90283203125
+        },
+        {
+          "height": 434.748291015625,
+          "id": "",
+          "viewBox": "0 0 880 420",
+          "width": 910.90283203125
+        },
+        {
+          "height": 550.6771240234375,
+          "id": "",
+          "viewBox": "0 0 880 532",
+          "width": 910.90283203125
+        }
+      ],
+      "h": 1000,
+      "headings": [
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "112px",
+          "text": "What gives a data center away"
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "72px",
+          "text": "Start with the people, not the code name."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "72px",
+          "text": "The first rule missed almost everything."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "72px",
+          "text": "The first filing can buy you time."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "72px",
+          "text": "Some names turn up again."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "72px",
+          "text": "The same proposal lands differently in different places."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "72px",
+          "text": "Where I would look next"
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "28.8px",
+          "text": "What I checked, and what I still don’t know"
+        }
+      ],
+      "height": 10806,
+      "overflow": false,
+      "w": 1600
+    },
+    "actual": {
+      "charts": [
+        {
+          "height": 376.779541015625,
+          "id": "",
+          "viewBox": "0 0 880 364",
+          "width": 910.90283203125
+        },
+        {
+          "height": 440.9548950195313,
+          "id": "",
+          "viewBox": "0 0 880 426",
+          "width": 910.90283203125
+        },
+        {
+          "height": 467.8645935058594,
+          "id": "",
+          "viewBox": "0 0 880 452",
+          "width": 910.90283203125
+        },
+        {
+          "height": 434.748291015625,
+          "id": "",
+          "viewBox": "0 0 880 420",
+          "width": 910.90283203125
+        },
+        {
+          "height": 550.6771240234375,
+          "id": "",
+          "viewBox": "0 0 880 532",
+          "width": 910.90283203125
+        }
+      ],
+      "h": 1000,
+      "headings": [
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "112px",
+          "text": "What gives a data center away"
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "72px",
+          "text": "Start with the people, not the code name."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "72px",
+          "text": "The first rule missed almost everything."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "72px",
+          "text": "The first filing can buy you time."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "72px",
+          "text": "Some names turn up again."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "72px",
+          "text": "The same proposal lands differently in different places."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "72px",
+          "text": "Where I would look next"
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "28.8px",
+          "text": "What I checked, and what I still don’t know"
+        }
+      ],
+      "height": 10806,
+      "overflow": false,
+      "w": 1600
+    }
+  },
+  "mobile": {
+    "reference": {
+      "charts": [
+        {
+          "height": 0,
+          "id": "",
+          "viewBox": "0 0 880 364",
+          "width": 0
+        },
+        {
+          "height": 0,
+          "id": "",
+          "viewBox": "0 0 880 426",
+          "width": 0
+        },
+        {
+          "height": 0,
+          "id": "",
+          "viewBox": "0 0 880 452",
+          "width": 0
+        },
+        {
+          "height": 0,
+          "id": "",
+          "viewBox": "0 0 880 420",
+          "width": 0
+        },
+        {
+          "height": 0,
+          "id": "",
+          "viewBox": "0 0 880 532",
+          "width": 0
+        }
+      ],
+      "h": 938,
+      "headings": [
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "56.3333px",
+          "text": "What gives a data center away"
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "35.2px",
+          "text": "Start with the people, not the code name."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "35.2px",
+          "text": "The first rule missed almost everything."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "35.2px",
+          "text": "The first filing can buy you time."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "35.2px",
+          "text": "Some names turn up again."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "35.2px",
+          "text": "The same proposal lands differently in different places."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "35.2px",
+          "text": "Where I would look next"
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "28.8px",
+          "text": "What I checked, and what I still don’t know"
+        }
+      ],
+      "height": 13485,
+      "overflow": false,
+      "w": 433
+    },
+    "actual": {
+      "charts": [
+        {
+          "height": 0,
+          "id": "",
+          "viewBox": "0 0 880 364",
+          "width": 0
+        },
+        {
+          "height": 0,
+          "id": "",
+          "viewBox": "0 0 880 426",
+          "width": 0
+        },
+        {
+          "height": 0,
+          "id": "",
+          "viewBox": "0 0 880 452",
+          "width": 0
+        },
+        {
+          "height": 0,
+          "id": "",
+          "viewBox": "0 0 880 420",
+          "width": 0
+        },
+        {
+          "height": 0,
+          "id": "",
+          "viewBox": "0 0 880 532",
+          "width": 0
+        }
+      ],
+      "h": 938,
+      "headings": [
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "56.3333px",
+          "text": "What gives a data center away"
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "35.2px",
+          "text": "Start with the people, not the code name."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "35.2px",
+          "text": "The first rule missed almost everything."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "35.2px",
+          "text": "The first filing can buy you time."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "35.2px",
+          "text": "Some names turn up again."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "35.2px",
+          "text": "The same proposal lands differently in different places."
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "35.2px",
+          "text": "Where I would look next"
+        },
+        {
+          "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+          "size": "28.8px",
+          "text": "What I checked, and what I still don’t know"
+        }
+      ],
+      "height": 13485,
+      "overflow": false,
+      "w": 433
+    }
+  }
+}
