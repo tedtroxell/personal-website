@@ -1,5 +1,6 @@
 import { appendFile, mkdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
+import { formspreeRequest } from "@/lib/contact-formspree";
 
 export const runtime = "nodejs";
 const intents = new Set(["leadership", "advisory", "speaking", "partner", "other"]);
@@ -24,7 +25,11 @@ export async function POST(request: Request) {
       if (process.env.CONTACT_WEBHOOK_TOKEN) headers.Authorization = `Bearer ${process.env.CONTACT_WEBHOOK_TOKEN}`;
       const result = await fetch(destination, { method: "POST", headers, body: JSON.stringify(lead), signal: AbortSignal.timeout(12000) });
       if (!result.ok) throw new Error("The message service did not accept the enquiry.");
-    } else if (!process.env.VERCEL) {
+    } else if (process.env.VERCEL) {
+      const formspree = formspreeRequest(lead);
+      const result = await fetch(formspree.url, formspree.init);
+      if (!result.ok) throw new Error("The message service did not accept the enquiry.");
+    } else {
       // Local preview keeps enquiries on this machine. Vercel requires a durable destination.
       const directory = join(process.cwd(), ".local");
       const file = join(directory, "leads.jsonl");
@@ -32,7 +37,7 @@ export async function POST(request: Request) {
       const existing = await readFile(file, "utf8").catch(() => "");
       const duplicate = existing.split("\n").some((line) => line && JSON.parse(line).request_id === lead.request_id);
       if (!duplicate) await appendFile(file, JSON.stringify({ ...lead, received_at: new Date().toISOString() }) + "\n", { mode: 0o600 });
-    } else return failure("The contact form is temporarily unavailable. Please email ted@tedtroxell.com. Your draft is preserved.", 503);
+    }
     return Response.json({ ok: true });
   } catch {
     return failure("Your message did not save. Your draft is preserved; please retry or email ted@tedtroxell.com.", 503);

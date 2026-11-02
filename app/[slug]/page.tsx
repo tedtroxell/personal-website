@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getFieldNote } from "@/lib/articles/field-notes";
 import { InteractiveArticle } from "@/components/articles/InteractiveArticle";
 import { PinnContent } from "@/components/reference/PinnContent";
-import { HelloContent } from "@/components/reference/HelloContent";
 import { notFound } from "next/navigation";
 import { ArticleRuntime } from "@/components/ArticleRuntime";
 import { ParetoContent } from "@/components/reference/ParetoContent";
@@ -38,5 +37,5 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   if (article.kind === "pareto") return <><ParetoContent /><ArticleRuntime kind="pareto" /></>;
   if (article.kind === "data") return <><DataCenterContent /><ArticleRuntime kind="data" /></>;
 
-  return article.slug === "hello-world" ? <HelloContent /> : <PinnContent />;
+  return <PinnContent />;
 }

@@ -25,9 +25,6 @@ export function PinnContent() {
 </article>
 {"\n"}
 <nav className={"post-nav"} aria-label={"Article navigation"}>
-<a href={"/hello-world/"} rel={"prev"}>
-{"← Hello world!"}
-</a>
 <a href={"/what-gives-a-data-center-away/"} rel={"next"}>
 {"What gives a data center away →"}
 </a>

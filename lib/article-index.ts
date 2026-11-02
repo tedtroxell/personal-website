@@ -16,7 +16,6 @@ export type Article = {
 
 export const articles: Article[] = [
   ...fieldNotes.map(note => ({ slug:note.slug,title:note.title,date:getPublicationDate(note.slug).label,publishedAt:getPublicationDate(note.slug).iso,category:note.category,excerpt:note.deck,source:"",kind:"field-note" as const,cover:`/assets/articles/${note.slug}.svg` })),
-  { slug: "hello-world", title: "Hello world!", date: "11 October 2026", category: "Uncategorized", excerpt: "Welcome to WordPress.", source: "", kind: "note" },
   {
     slug: "what-gives-a-data-center-away",
     title: "What gives a data center away",
