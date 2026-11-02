@@ -23,6 +23,7 @@ export const articles: Article[] = [
     category: "Data journalism",
     excerpt: "A look at 38 large projects finds that code names are weak clues. The parties behind land records and jobs promised per dollar offer a more useful lead, with important limits.",
     source: "what-gives-a-data-center-away.html",
+    cover: "/assets/articles/what-gives-a-data-center-away.svg",
     kind: "data",
   },
   {
@@ -38,6 +39,7 @@ export const articles: Article[] = [
   {
     slug: "whats-a-pinn",
     title: "What’s a PINN?",
+    cover: "/assets/articles/whats-a-pinn.svg",
     date: "11 October 2026",
     category: "Machine learning",
     excerpt: "A physics-informed neural network combines a neural network with the equations a system is known to obey.",
