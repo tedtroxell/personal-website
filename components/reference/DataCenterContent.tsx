@@ -2017,9 +2017,6 @@ export function DataCenterContent() {
 {"Many comparison projects are well known. In a real search, the harder calls are anonymous LLCs that turn out to be warehouses, factories or solar projects. This test does not cover enough of those."}
 </li>
 {"\n      "}
-<li>
-{"I logged two calls to revisit: Sidecat LLC’s $42 million New Albany parcel bought in December 2025, and a search that found no comparable lead in Las Cruces, New Mexico, as of October 2026. Neither is a confirmed outcome. “No lead found” is especially easy to overstate."}
-</li>
 {"\n    "}
 </ul>
 {"\n    "}
