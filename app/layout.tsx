@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./wordpress-base.css";
 import "./globals.css";
 import "./field-notes.css";
+import "./nvidia-article.css";
 import { SiteRuntime } from "@/components/SiteRuntime";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";

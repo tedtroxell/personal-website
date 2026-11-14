@@ -10,7 +10,7 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "test:models": "node --experimental-strip-types --test tests/article-models.test.mjs"
+    "test:models": "node --experimental-strip-types --test tests/article-models.test.mjs tests/nvidia-model.test.mjs tests/nvidia-morph.test.mjs"
   },
   "dependencies": {
     "next": "16.4.3",

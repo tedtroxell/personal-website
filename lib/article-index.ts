@@ -15,6 +15,17 @@ export type Article = {
 };
 
 export const articles: Article[] = [
+  {
+    slug: "nvidia-software-hardware-moat",
+    title: "Everyone wants a piece of NVIDIA.",
+    date: "14 November 2026",
+    publishedAt: "2026-11-14",
+    category: "Semiconductors",
+    excerpt: "A question about NVIDIA’s physics libraries led me into chip design, competing hardware and customer funding. Here’s what I found and what I’m still watching.",
+    source: "",
+    kind: "note",
+    cover: "/assets/articles/nvidia-software-hardware-moat.svg",
+  },
   ...fieldNotes.map(note => ({ slug:note.slug,title:note.title,date:getPublicationDate(note.slug).label,publishedAt:getPublicationDate(note.slug).iso,category:note.category,excerpt:note.deck,source:"",kind:"field-note" as const,cover:`/assets/articles/${note.slug}.svg` })),
   {
     slug: "what-gives-a-data-center-away",

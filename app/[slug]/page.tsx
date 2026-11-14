@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { NvidiaArticle } from "@/components/articles/NvidiaArticle";
 import { getFieldNote } from "@/lib/articles/field-notes";
 import { InteractiveArticle } from "@/components/articles/InteractiveArticle";
 import { PinnArticle } from "@/components/articles/PinnArticle";
@@ -29,6 +30,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
   const article = getArticle(slug);
   if (!article) notFound();
+  if (slug === "nvidia-software-hardware-moat") return <NvidiaArticle />;
   const note = getFieldNote(slug);
   if (note) return <InteractiveArticle note={note} />;
 
